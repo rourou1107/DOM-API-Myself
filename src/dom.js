@@ -109,11 +109,11 @@ window.dom = {
     style(node, name, value) {
         // 设置 dom.style(node, 'color', 'red')
         if(arguments.length === 3) {
-            node.style.name = value
+            node.style[name] = value
         } else if(arguments.length === 2){
             // 获取 dom.style(node, 'color')
             if(typeof name === 'string') {
-                return node.name
+                return node[name]
             }else if (name instanceof Object) {
                 // 设置 dom.style(node, {'color', 'red'})
                 let object = name
